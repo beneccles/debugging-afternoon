@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './StoreFront.css';
 
 class StoreFront extends Component {
+
+  constructor(props){
+    super(props)
+  }
+
   render() {
     let productDisplay = this.props.products.map((element, index) => {
       return (

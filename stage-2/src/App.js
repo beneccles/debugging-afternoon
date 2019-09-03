@@ -5,7 +5,7 @@ import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       products: [],
@@ -18,7 +18,7 @@ class App extends Component {
   }
   componentDidMount() {
     axios
-      .get("https://practiceapi.devmountain.com/products/")
+      .get("https://practiceapi.devmountain.com/products/:response")
       .then(response => {
         this.setState({
           products: response
