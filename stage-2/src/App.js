@@ -16,12 +16,16 @@ class App extends Component {
     this.removeFromCart = this.removeFromCart.bind(this);
     this.navigate = this.navigate.bind(this);
   }
+
+  // Issue here was that they were trying to call for parameters,
+  // when they wanted to bring in the body.
+  // For body use "/products" NOT "/products/:respnse"
   componentDidMount() {
     axios
-      .get("https://practiceapi.devmountain.com/products/:response")
+      .get("https://practiceapi.devmountain.com/products")
       .then(response => {
         this.setState({
-          products: response
+          products: response.data
         });
       });
   }

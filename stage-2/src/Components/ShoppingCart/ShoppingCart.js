@@ -6,7 +6,7 @@ class ShoppingCart extends Component {
     super(props)
   }
   render() {
-    let shoppingCartDisplay = this.props.shoppingCart.map((element, index) => {
+    let shoppingCartDisplay = this.props.cart.map((element, index) => {
       return (
         <div className="shopping-cart-product-container" key={index}>
           <img src={element.image} alt="" />

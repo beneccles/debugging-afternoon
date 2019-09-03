@@ -8,6 +8,7 @@ class StoreFront extends Component {
   }
 
   render() {
+    // Create the square that will contain the product on the website.
     let productDisplay = this.props.products.map((element, index) => {
       return (
         <div className="product-container" key={index}>
@@ -21,6 +22,7 @@ class StoreFront extends Component {
     })
     return (
       <div className="storefront-container">
+        {productDisplay}
       </div>
     )
   }
