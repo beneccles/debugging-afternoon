@@ -29,10 +29,23 @@ class App extends Component {
         });
       });
   }
+
+  // Originally, a new cart item would just overwrite whats already there.
+  // Changed code so that the cart array was set to a placeholder variable,
+  // and then the new item was pushed on to the array. After that, newArr is set-stated
+  // to state.cart.
   addToCart(item) {
+    console.log(`Old Cart: ${this.state.cart}`)
+
+    let newArr = this.state.cart;
+    newArr.push(item);
+
+    
     this.setState({
-      cart: item
+      cart: newArr
     });
+
+    console.log(this.state.cart)
   }
   removeFromCart(index) {
     let cartCopy = this.state.products.slice();
@@ -54,6 +67,7 @@ class App extends Component {
   }
   render() {
     const { products, cart, showCart } = this.state;
+
     return (
       <div className="App">
         <NavBar navigate={this.navigate} />
